@@ -3,6 +3,7 @@ html {
 }
 
 body {
+    text-align: center;
     padding-top: 150px;
     font-size: 1rem;
     min-height: 100vh;
@@ -10,8 +11,21 @@ body {
     font-family: "Jura", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    background: linear-gradient(37deg, #020024 0%, #090979 35%, #00d4ff 100%);
+    background: linear-gradient(37deg, #210024 0%, #5f0979 35%, #e100ff 100%);
 }
+
+main, .content {
+    text-align: center;
+}
+
+section, .gallery {
+    text-align: center;
+}
+
+.gallery {
+    text-align: left;
+}
+
 header {
     top: -40px;
     position: fixed;
@@ -82,18 +96,64 @@ button:active {
 .abtweb {
     text-align: center;
 }
+
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .gallery img {
-  width: 100%;  
-  height: auto;  
-  object-fit: cover; 
-  display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.1);
 }
+
+.gallery img:hover {
+    transform: scale(1.05) rotate(1deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(0, 212, 255, 0.6);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.gallery img:active {
+    transform: scale(0.98);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.gallery img {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.gallery img:nth-child(1) { animation-delay: 0.1s; }
+.gallery img:nth-child(2) { animation-delay: 0.2s; }
+.gallery img:nth-child(3) { animation-delay: 0.3s; }
+.gallery img:nth-child(4) { animation-delay: 0.4s; }
+.gallery img:nth-child(5) { animation-delay: 0.5s; }
+.gallery img:nth-child(6) { animation-delay: 0.6s; }
+.gallery img:nth-child(7) { animation-delay: 0.7s; }
+.gallery img:nth-child(8) { animation-delay: 0.8s; }
+.gallery img:nth-child(9) { animation-delay: 0.9s; }
+.gallery img:nth-child(10) { animation-delay: 1.0s; }
 
 .close-button {
     position: fixed;
@@ -111,4 +171,52 @@ button:active {
 
 .close-button:hover {
     color: rgb(255, 0, 128);
+}
+
+#aboutWebsite, #gallery, #footered {
+    scroll-margin-top: 168px;
+}
+
+.footer {
+    background: linear-gradient(135deg, rgba(16, 17, 17, 0.95) 0%, rgba(62, 62, 63, 0.95) 35%, rgba(34, 20, 37, 0.95) 100%);
+    color: antiquewhite;
+    margin-top: 60px;
+    padding: 40px 20px 20px;
+    border-top: 2px solid rgba(0, 212, 255, 0.3);
+    text-align: center;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #00d4ff;
+}
+
+.footer-section p {
+    line-height: 1.6;
+    margin: 8px 0;
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 }
