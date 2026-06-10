@@ -1,0 +1,114 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    padding-top: 150px;
+    font-size: 1rem;
+    min-height: 100vh;
+    color: antiquewhite;
+    font-family: "Jura", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background: linear-gradient(37deg, #020024 0%, #090979 35%, #00d4ff 100%);
+}
+header {
+    top: -40px;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(10, 10, 10, 0.8);
+    font-weight: bold;
+    color: aquamarine;
+    font-family: "Jura", sans-serif;
+    z-index: 100;
+    padding-top: 80px;
+}
+
+.abtwebsite {
+    text-align: center;
+}
+
+input {    
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    padding: 10px 15px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    font-family: "Jura", sans-serif;
+    transition: all 0.3s ease
+}
+
+input:focus {
+    border-color: #00d4ff;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+    background: rgba(44, 42, 42, 0.5);
+    outline: none;
+    animation: glow 0.5s ease-in-out
+}
+
+input::placeholder {
+    color:rgba(255, 255, 255 0.5);
+    font-style: italic;
+    font-size: 17px;
+}
+
+button {
+    background: linear-gradient(135deg, #2c3e50, #1a1a2e);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+button:hover {
+    transform: scale(0.96);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    background: linear-gradient(135deg, #3e5a6b, #2a2a4e);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+.abtweb {
+    text-align: center;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.gallery img {
+  width: 100%;  
+  height: auto;  
+  object-fit: cover; 
+  display: block;
+}
+
+.close-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 35px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.5 ease;
+}
+
+.close-button:hover {
+    color: rgb(255, 0, 128);
+}
